@@ -3,6 +3,7 @@
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ResponseController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -34,4 +35,8 @@ Route::prefix('auth')->middleware('guest')->group(function () {
 Route::prefix('dashboard')->middleware('auth:web')->group(function () {
 
     Route::get('/', [DashboardController::class, 'dashboard'])->name('dashboard');
+
+    Route::resource('response', ResponseController::class);
 });
+
+Route::any('responsinator/{uuid}', [\App\Http\Controllers\ResponsinatorController::class, 'returnResponse'])->name('response.url');
