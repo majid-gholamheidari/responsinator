@@ -7,7 +7,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet">
 
     <title>@yield('title', 'Welcome to Responsinator')</title>
 
@@ -28,7 +28,7 @@
 </nav>
 
 
-<div class="container pt-5">
+<div class="container pt-5 pb-5">
 
     @include('layouts.errors')
 
@@ -39,13 +39,11 @@
 </div>
 
 
+<!-- Bootstrap bundle 5.0.2 -->
+<script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous">
-</script>
-
-<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<!-- jQuery 3.7.1 -->
+<script src="{{ asset('assets/js/jQuery-3.7.1.min.js') }}"></script>
 
 @yield('js')
 </body>

@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\Controller;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ResponseController;
 use Illuminate\Support\Facades\Route;
@@ -17,18 +19,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [Controller::class, 'welcome'])->name('welcome');
 
-Route::prefix('auth')->middleware('guest')->group(function () {
+Route::prefix('auth')->group(function () {
 
-    Route::get('/login', [LoginController::class, 'loginPage'])->name('login-page');
-    Route::post('/login', [LoginController::class, 'login'])->name('login');
+    Route::middleware('guest')->group(function () {
+        Route::get('/login', [LoginController::class, 'loginPage'])->name('login-page');
+        Route::post('/login', [LoginController::class, 'login'])->name('login');
 
-    Route::get('register', [RegisterController::class, 'registerPage'])->name('register-page');
-    Route::post('register', [RegisterController::class, 'register'])->name('register');
+        Route::get('register', [RegisterController::class, 'registerPage'])->name('register-page');
+        Route::post('register', [RegisterController::class, 'register'])->name('register');
+    });
 
+    Route::middleware('auth')->post('logout', [LogoutController::class, 'logout'])->name('logout');
 });
 
 

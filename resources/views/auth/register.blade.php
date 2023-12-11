@@ -1,5 +1,7 @@
 @extends('layouts.auth')
 
+@section('title', 'Responsinator | Register')
+
 @section('content')
     <div class="card">
         <h5 class="card-header">Register</h5>
