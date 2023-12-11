@@ -57,7 +57,7 @@ class ResponseRequest extends FormRequest
                 'min:1'
             ],
             'code' => [
-                'nullable',
+                'required',
                 'numeric',
                 'between:100,599'
             ]
@@ -73,6 +73,17 @@ class ResponseRequest extends FormRequest
             'header_index.*' => 'header index',
             'header_value.*' => 'header value',
             'code' => 'status code',
+        ];
+    }
+
+    /**
+     * @return string[]
+     */
+    protected function defaults(): array
+    {
+        return [
+            'code'   => '200',
+            'type' => 'GET'
         ];
     }
 }
