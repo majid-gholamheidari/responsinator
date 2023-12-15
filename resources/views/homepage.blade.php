@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Responsinator</title>
     <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,600" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('assets/welcome/dist/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/homepage/dist/css/style.css') }}">
     <script src="https://unpkg.com/animejs@3.0.1/lib/anime.min.js"></script>
     <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
 </head>
@@ -18,7 +18,7 @@
                 <div class="brand header-brand">
                     <h1 class="m-0">
                         <a href="#">
-                            <img class="header-logo-image" src="{{ asset('assets/welcome/dist/images/logo.svg') }}" alt="Logo">
+                            <img class="header-logo-image" src="{{ asset('assets/homepage/dist/images/logo.svg') }}" alt="Logo">
                         </a>
                     </h1>
                 </div>
@@ -61,7 +61,7 @@
                         <div class="feature text-center is-revealing">
                             <div class="feature-inner">
                                 <div class="feature-icon">
-                                    <img src="{{ asset('assets/welcome/dist/images/feature-icon-01.svg') }}" alt="Feature 01">
+                                    <img src="{{ asset('assets/homepage/dist/images/feature-icon-01.svg') }}" alt="Feature 01">
                                 </div>
                                 <h4 class="feature-title mt-24">Free and Unlimited</h4>
                                 <p class="text-sm mb-0">Create infinite API instances and use your unlimited APIs without limits, absolutely <strong>FREE</strong>.</p>
@@ -70,7 +70,7 @@
                         <div class="feature text-center is-revealing">
                             <div class="feature-inner">
                                 <div class="feature-icon">
-                                    <img src="{{ asset('assets/welcome/dist/images/feature-icon-03.svg') }}" alt="Feature 03">
+                                    <img src="{{ asset('assets/homepage/dist/images/feature-icon-03.svg') }}" alt="Feature 03">
                                 </div>
                                 <h4 class="feature-title mt-24">Easy to use</h4>
                                 <p class="text-sm mb-0">With <strong>Responsinator</strong> you can easily start to building your responses in minutes.</p>
@@ -79,7 +79,7 @@
                         <div class="feature text-center is-revealing">
                             <div class="feature-inner">
                                 <div class="feature-icon">
-                                    <img src="{{ asset('assets/welcome/dist/images/feature-icon-02.svg') }}" alt="Feature 02">
+                                    <img src="{{ asset('assets/homepage/dist/images/feature-icon-02.svg') }}" alt="Feature 02">
                                 </div>
                                 <h4 class="feature-title mt-24">Flexible</h4>
                                 <p class="text-sm mb-0">Create the APIs you want exactly suitable for testing your apps, absolutely <strong>CUSTOMIZABLE</strong>.</p>
@@ -97,7 +97,7 @@
                         <h2 class="section-title mt-0">Management dashboard</h2>
                         <p class="section-paragraph mb-0">Manage your APIs and all related details in your dashboard.</p>
                     </div>
-                    <img src="{{ asset('assets/welcome/dist/images/dashboard-1.jpeg') }}" alt="">
+                    <img src="{{ asset('assets/homepage/dist/images/dashboard-1.jpeg') }}" alt="">
                 </div>
             </div>
         </section>
@@ -273,7 +273,7 @@
             <div class="site-footer-inner">
                 <div class="brand footer-brand">
                     <a href="#">
-                        <img class="header-logo-image" src="{{ asset('assets/welcome/dist/images/logo.svg') }}" alt="Logo">
+                        <img class="header-logo-image" src="{{ asset('assets/homepage/dist/images/logo.svg') }}" alt="Logo">
                     </a>
                 </div>
                 <ul class="footer-links list-reset">
@@ -291,6 +291,6 @@
     </footer>
 </div>
 
-<script src="{{ asset('assets/welcome/dist/js/main.min.js') }}"></script>
+<script src="{{ asset('assets/homepage/dist/js/main.min.js') }}"></script>
 </body>
 </html>

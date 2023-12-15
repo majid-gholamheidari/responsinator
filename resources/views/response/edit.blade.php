@@ -1,24 +1,9 @@
 @extends('layouts.auth')
 
-@section('head')
-    <style>
-        pre {
-            outline: 1px solid #ccc;
-            padding: 5px;
-            margin: 5px;
-            height: 250px;
-        }
-        .string { color: green; }
-        .number { color: darkorange; }
-        .boolean { color: blue; }
-        .null { color: magenta; }
-        .key { color: red; }
+@section('title', 'Update The response of `' . $response->title . '` API')
 
-        .json-body-textarea {
-            height: 250px;
-            resize: none;
-        }
-    </style>
+@section('head')
+    <link rel="stylesheet" href="{{ asset('assets/css/responsinator.css') }}">
 @endsection
 
 @section('content')
@@ -115,61 +100,5 @@
 @endsection
 
 @section('js')
-    <script>
-        function output(json) {
-            document.getElementById('preview-json').innerHTML = syntaxHighlighter(json);
-        }
-        function syntaxHighlighter(json) {
-            json = json.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-            return json.replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g, function (match) {
-                var cls = 'number';
-                if (/^"/.test(match)) {
-                    if (/:$/.test(match)) {
-                        cls = 'key';
-                    } else {
-                        cls = 'string';
-                    }
-                } else if (/true|false/.test(match)) {
-                    console.log('salam')
-                    cls = 'boolean';
-                } else if (/null/.test(match)) {
-                    console.log('buy')
-                    cls = 'null';
-                }
-                return '<span class="' + cls + '">' + match + '</span>';
-            });
-
-        }
-
-        function addNewHeaderInputs() {
-            let randomId = btoa(Math.random()).substring(0,12);
-
-            let rowElement =
-                `<div class="row mb-2" id="${randomId}">
-                    <div class="col-lg-5 col-sm-12">
-                        <input type="text" id="" class="form-control" data-row="${randomId}" placeholder="header index" name="header_index[]">
-                    </div>
-
-                    <div class="col-lg-5 col-sm-12">
-                        <input type="text" id="" class="form-control" data-row="${randomId}" placeholder="header value" name="header_value[]">
-                    </div>
-
-                    <div class="col-lg-2 col-sm-12">
-                        <button type="button" class="btn btn-danger w-100" data-row="${randomId}" onclick="deleteHeaderRow('${randomId}')">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-trash-2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg>
-                            remove
-                        </button>
-                    </div>
-                    <br>
-                </div>`;
-
-            $('#header-items').append(rowElement);
-        }
-
-        function deleteHeaderRow(rowId) {
-            $(document).find(`#${rowId}`).remove();
-        }
-
-        output(document.getElementById('body').value);
-    </script>
+    <script src="{{ asset('assets/js/responsinator.js') }}"></script>
 @endsection

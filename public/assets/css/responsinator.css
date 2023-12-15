@@ -1,0 +1,16 @@
+pre {
+    outline: 1px solid #ccc;
+    padding: 5px;
+    margin: 5px;
+    height: 250px;
+}
+.string { color: green; }
+.number { color: darkorange; }
+.boolean { color: blue; }
+.null { color: magenta; }
+.key { color: red; }
+
+.json-body-textarea {
+    height: 250px;
+    resize: none;
+}
