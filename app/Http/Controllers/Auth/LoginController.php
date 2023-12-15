@@ -36,11 +36,11 @@ class LoginController extends Controller
      */
     public function login(LoginRequest $request)
     {
-        $loginAttempt = $this->userRepository->loginAttempt($request->email, $request->password);
+        $loginAttempt = $this->userRepository->loginAttempt($request->username, $request->password);
         if ($loginAttempt) {
             return redirect()->route('dashboard');
         }
 
-        return redirect()->back()->withErrors(['You have entered an invalid email or password!']);
+        return redirect()->back()->withErrors(['You have entered an invalid username or password!']);
     }
 }

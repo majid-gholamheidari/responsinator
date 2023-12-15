@@ -28,10 +28,9 @@ class RegisterRequest extends FormRequest
                 'max:255',
             ],
 
-            'email' => [
+            'username' => [
                 'required',
-                'email',
-                'unique:users,email',
+                'unique:users,username',
             ],
 
             'password' => [

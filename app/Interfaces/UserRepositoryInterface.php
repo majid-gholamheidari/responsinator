@@ -22,9 +22,9 @@ interface UserRepositoryInterface
 
 
     /**
-     * @param string $email
+     * @param string $username
      * @param string $password
      * @return bool
      */
-    public function loginAttempt(string $email, string $password): bool;
+    public function loginAttempt(string $username, string $password): bool;
 }

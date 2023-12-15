@@ -39,7 +39,7 @@ class RegisterController extends Controller
      */
     public function register(RegisterRequest $request)
     {
-        $this->userRepository->createUser($request->only('name', 'email', 'password'));
+        $this->userRepository->createUser($request->only('name', 'username', 'password'));
         return redirect()->route('login-page')->with('success', 'Registration successfully done.');
     }
 }
