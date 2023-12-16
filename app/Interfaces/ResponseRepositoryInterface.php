@@ -11,36 +11,36 @@ interface ResponseRepositoryInterface
      * @param array $responseData
      * @return mixed
      */
-    public function createResponse(array $responseData): mixed;
+    public function createResponse(array $responseData);
 
     /**
      * @param array $responseData
      * @param string $uuid
      * @return mixed
      */
-    public function updateResponse(array $responseData, string $uuid): mixed;
+    public function updateResponse(array $responseData, string $uuid);
 
     /**
      * @param string $uuid
      * @return mixed
      */
-    public function findResponseByUuid(string $uuid): mixed;
+    public function findResponseByUuid(string $uuid);
 
     /**
      * @param User $user
      * @return mixed
      */
-    public function getUserResponses(User $user): mixed;
+    public function getUserResponses(User $user);
 
     /**
      * @param string $uuid
      * @return mixed
      */
-    public function destroyResponseByUuid(string $uuid): mixed;
+    public function destroyResponseByUuid(string $uuid);
 
     /**
      * @param string $uuid
      * @return mixed
      */
-    public function successRequest(string $uuid): mixed;
+    public function successRequest(string $uuid);
 }
