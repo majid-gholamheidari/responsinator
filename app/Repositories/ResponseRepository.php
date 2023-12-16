@@ -5,6 +5,7 @@ namespace App\Repositories;
 use App\Interfaces\ResponseRepositoryInterface;
 use App\Models\Response;
 use App\Models\User;
+use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Collection;
 
 class ResponseRepository implements ResponseRepositoryInterface
@@ -40,11 +41,11 @@ class ResponseRepository implements ResponseRepositoryInterface
 
     /**
      * @param User $user
-     * @return Collection
+     * @return LengthAwarePaginator
      */
-    public function getUserResponses(User $user): Collection
+    public function getUserResponses(User $user): LengthAwarePaginator
     {
-        return Response::whereUserId($user->id)->get();
+        return Response::whereUserId($user->id)->paginate(15);
     }
 
     /**

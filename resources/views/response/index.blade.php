@@ -14,10 +14,10 @@
                     <th scope="col">#</th>
                     <th scope="col">Title</th>
                     <th scope="col">Requests</th>
-                    <th scope="col">Type</th>
+                    <th scope="col">Method</th>
                     <th scope="col">Status code</th>
                     <th scope="col">Expiration time</th>
-                    <th scope="col">More</th>
+                    <th scope="col">Action</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -44,37 +44,12 @@
                     @endforeach
                 </tbody>
             </table>
+
+            {{ $responses->links() }}
         </div>
     </div>
 @endsection
 
 @section('js')
-    <script>
-        function copyUrl(url) {
-            navigator.clipboard.writeText(url).then(() => {
-                alert('The url copied to clipboard.');
-            },() => {
-                alert('Failed to copy !');
-            });
-        }
-
-        function alertForRemove(href) {
-            if (confirm('Are u sure for remove this response...?!')) {
-                $.post({
-                    url: href,
-                    data: {
-                        _token: $(`meta[name='csrf-token']`).attr('content'),
-                        _method: "DELETE"
-                    },
-                    success: function () {
-                        alert('The response deleted successfully.');
-                        window.location.reload();
-                    },
-                    error: function () {
-                        alert('Something went wrong ... !');
-                    }
-                });
-            }
-        }
-    </script>
+    <script src="{{ asset('assets/js/responsinator.js') }}"></script>
 @endsection

@@ -58,3 +58,30 @@ function deleteHeaderRow(rowId) {
 }
 
 output(document.getElementById('body').value);
+
+function copyUrl(url) {
+    navigator.clipboard.writeText(url).then(() => {
+        alert('The url copied to clipboard.');
+    },() => {
+        alert('Failed to copy !');
+    });
+}
+
+function alertForRemove(href) {
+    if (confirm('Are u sure for remove this response...?!')) {
+        $.post({
+            url: href,
+            data: {
+                _token: $(`meta[name='csrf-token']`).attr('content'),
+                _method: "DELETE"
+            },
+            success: function () {
+                alert('The response deleted successfully.');
+                window.location.reload();
+            },
+            error: function () {
+                alert('Something went wrong ... !');
+            }
+        });
+    }
+}
