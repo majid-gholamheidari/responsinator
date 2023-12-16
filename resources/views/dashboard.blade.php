@@ -9,7 +9,7 @@
 @section('content')
     <div class="row">
         <div class="col-lg-6 col-sm-12 ">
-            <a href="{{ route('response.create') }}" style="text-decoration: unset;" class="text-body">
+            <a href="{{ route('response.index') }}" style="text-decoration: unset;" class="text-body">
                 <div class="card border-secondary mb-3 shadow">
                     <div class="card-header">APIs list</div>
                     <div class="card-body text-secondary">
@@ -21,7 +21,7 @@
         </div>
 
         <div class="col-lg-6 col-sm-12 ">
-            <a href="{{ route('response.index') }}" style="text-decoration: unset;" class="text-body">
+            <a href="{{ route('response.create') }}" style="text-decoration: unset;" class="text-body">
                 <div class="card border-secondary mb-3 shadow" >
                     <div class="card-header">New API</div>
                     <div class="card-body text-secondary">
