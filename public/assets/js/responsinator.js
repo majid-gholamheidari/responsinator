@@ -57,7 +57,8 @@ function deleteHeaderRow(rowId) {
     $(document).find(`#${rowId}`).remove();
 }
 
-output(document.getElementById('body').value);
+if (document.getElementById('body'))
+    output(document.getElementById('body').value);
 
 function copyUrl(url) {
     navigator.clipboard.writeText(url).then(() => {
