@@ -16,6 +16,7 @@ class Response extends Model
         'body',
         'header',
         'code',
+        'delay',
         'expire_time',
         'requests',
         'uuid',

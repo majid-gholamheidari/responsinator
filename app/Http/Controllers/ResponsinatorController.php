@@ -23,6 +23,8 @@ class ResponsinatorController extends Controller
         $response = $this->responseRepository->findResponseByUuid($uuid);
         if ($response && $response->type === request()->method()) {
             $this->responseRepository->successRequest($uuid);
+            if ($response->delay > 0)
+                usleep($response->delay * 1000);
             return response()
                 ->json(json_decode($response->body, true))
                 ->withHeaders(json_decode($response->header, true) ?? [])

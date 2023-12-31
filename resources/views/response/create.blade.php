@@ -12,11 +12,11 @@
         <div class="card-body">
             <form action="{{ route('response.store') }}" method="POST">
                 <div class="row">
-                    <div class="mb-3 col-lg-8 col-sm-12">
+                    <div class="mb-3 col-12">
                         <label for="title" class="form-label">Title</label>
                         <input type="text" class="form-control" id="title" name="title" value="{{ old('title') }}">
                     </div>
-                    <div class="mb-3 col-lg-2 col-sm-12">
+                    <div class="mb-3 col-lg-4 col-sm-12">
                         <label class="mb-2" for="type">Type</label>
                         <br>
                         <select name="type" id="type" class="form-control">
@@ -27,10 +27,15 @@
                             <option  @selected(old('type') == 'patch') value="patch">PATCH</option>
                         </select>
                     </div>
-                    <div class="mb-3 col-lg-2 col-sm-12">
-                        <label class="mb-2" for="type">Status code</label>
+                    <div class="mb-3 col-lg-4 col-sm-12">
+                        <label class="mb-2" for="code">Status code</label>
                         <br>
-                        <input type="number" class="form-control" placeholder="Default: 200" name="code" value="{{ old('code') }}">
+                        <input id="code" type="number" class="form-control" placeholder="Default: 200" name="code" value="{{ old('code') }}">
+                    </div>
+                    <div class="mb-3 col-lg-4 col-sm-12">
+                        <label class="mb-2" for="delay">Delay</label>
+                        <br>
+                        <input id="delay" type="number" class="form-control" placeholder="in milliseconds" name="delay" value="{{ old('delay') }}">
                     </div>
                 </div>
 

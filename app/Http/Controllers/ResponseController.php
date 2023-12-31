@@ -57,7 +57,8 @@ class ResponseController extends Controller
             'header',
             'code',
             'description',
-            'header'
+            'header',
+            'delay'
         ]);
 
         if ($uuid)

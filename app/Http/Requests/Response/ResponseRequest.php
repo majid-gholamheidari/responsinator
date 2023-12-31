@@ -60,6 +60,12 @@ class ResponseRequest extends FormRequest
                 'required',
                 'numeric',
                 'between:100,599'
+            ],
+            'delay' => [
+                'nullable',
+                'numeric',
+                'min:0',
+                'max:10000'
             ]
         ];
     }
