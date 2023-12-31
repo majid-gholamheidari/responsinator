@@ -1,20 +1,20 @@
 # Responsinator
 
-A simple laravel project to mock your REST APIs !
+A simple laravel project to Mock API for rapid front-end development!\
+Generate PUT, POST, PUT, PATCH and DELETE requests and use them as real as a server response.
 
-[Demo and usage](https://responsinator.majid-gholamheidari.ir/)
 
-## Overview
 
-With this open source project you can have your own server to create any API response.
-Develop your app and don't worry about API responses.
+## [Demo and usage](https://responsinator.majid-gholamheidari.ir/)
 
-- Make any response in different methods
-``` GET, POST, PUT, PATCH, DELETE ```
-- Set your custom status code
-- Have mode details privately
-- Customize headers according to your needs
+## Features
 
+- **No Limit In Response**: generate any response with no limitation in body or headers.
+- **Any Type Of Response**: Mock your APIs with GET, POST, PUT, PATCH and DELETE requests.
+- **Delay Simulation**: Simulate network delays to test how your system handles timeouts and latency.
+- **Customizable Headers**: Customize response header based on your needs.
+- **Set Your Status Code**: Set any status code you want for your response.
+- **Save With More Description**: Save responses with title and description.
 
 ## Installation
 
@@ -53,4 +53,4 @@ edit the following items according to your needs
   php artisan serve
 ```
 
-I hope can add more useful features to this repository in the future, such as artificial intelligence, but in this way, please accompany me.
+I hope can add more useful features to this repository in the future, such as artificial intelligence, but in this way, please make me happy with your support ⭐ .
