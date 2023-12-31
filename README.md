@@ -1,3 +1,5 @@
+<p align="center"><img src="/public/assets/responsinator.png"></p>
+
 # Responsinator
 
 A simple laravel project to Mock API for rapid front-end development!\
